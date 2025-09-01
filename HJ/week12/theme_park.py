@@ -23,6 +23,7 @@ if N <= M :
 def cnt(time) :
     return M + sum(time // lst[i] for i in range(M))
 
+
 ### 이분탐색으로 탑승시간 찾기
 time = 0
 left = 0
@@ -39,6 +40,7 @@ while left <= right :
 now = time
 check = cnt(max(0,now-1))
 tmp=[]
+# 탈수 있는 놀이기구 번호
 for l in range(M):
     if lst[l] >= 0 :
         if now % lst[l] == 0 :
@@ -47,6 +49,7 @@ for l in range(M):
         pass
 
 tmp.sort()
+
 for t in tmp :
     check += 1
     if check == N :
